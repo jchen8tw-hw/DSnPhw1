@@ -18,25 +18,32 @@ class JsonElem
 {
 public:
    // TODO: define constructor & member functions on your own
-   JsonElem() {}
+   JsonElem() : _key(""),_value(0) {}
    JsonElem(const string& k, int v): _key(k), _value(v) {}
 
+
    friend ostream& operator << (ostream&, const JsonElem&);
+   friend bool operator >> (string& in ,JsonElem&);
 
 private:
-   string  _key;   // DO NOT change this definition. Use it to store key.
-   int     _value; // DO NOT change this definition. Use it to store value.
+  string  _key;   // DO NOT change this definition. Use it to store key.
+  int     _value; // DO NOT change this definition. Use it to store value.
 };
 
 class Json
 {
 public:
    // TODO: define constructor & member functions on your own
-   bool read(const string&);
+  Json(){}
+  bool read(const string&);
+  bool comm (const string&);
+  void print();
+
 
 private:
-   vector<JsonElem>       _obj;  // DO NOT change this definition.
-                                 // Use it to store JSON elements.
+  int min,max,ave;
+  vector<JsonElem>       _obj;  // DO NOT change this definition.
+                                // Use it to store JSON elements.
 };
 
 #endif // P2_TABLE_H

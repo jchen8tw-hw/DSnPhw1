@@ -7,6 +7,7 @@
 ****************************************************************************/
 #include <iostream>
 #include <string>
+#include <regex>
 #include "p2Json.h"
 
 using namespace std;
@@ -25,13 +26,12 @@ int main()
       cerr << "Failed to read in file \"" << jsonFile << "\"!" << endl;
       exit(-1); // jsonFile does not exist.
    }
-
    // TODO read and execute commands
-   // cout << "Enter command: ";
-   string command;
-   while (true) {
+  cout << "Enter command: ";
+  string command;
+  while (true) {
       cout << "Enter command: ";
       cin >> command;
-      //to do
-   }
+      if(!json.comm(command)) break;
+  }
 }
