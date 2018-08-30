@@ -1,6 +1,11 @@
 {
     "files.associations": {
         "regex": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "algorithm": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp",
+        "ratio": "cpp",
+        "system_error": "cpp"
     }
 }

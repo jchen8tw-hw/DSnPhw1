@@ -27,11 +27,12 @@ int main()
       exit(-1); // jsonFile does not exist.
    }
    // TODO read and execute commands
-  cout << "Enter command: ";
+  //cout << "Enter command: ";
   string command;
+  cin.ignore();
   while (true) {
       cout << "Enter command: ";
-      cin >> command;
+      getline(cin,command);
       if(!json.comm(command)) break;
   }
 }
