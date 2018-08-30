@@ -1,12 +1,12 @@
 all: test.out check_compiler
 
 test.out:
-	@g++ -std=c++11 test.cpp -o test.out
+	@g++-8 -std=c++11 test.cpp -o test.out
 	@echo "Compile success!!"
 	@./test.out
 	@rm -rf ./test.out
 check_compiler:
-	@COMPILER_1=$$(g++ --version 2>&1| grep g++);COMPILER_2=$$(g++ --version | grep clang);\
+	@COMPILER_1=$$(g++-8 --version 2>&1| grep g++);COMPILER_2=$$(g++-8 --version | grep clang);\
 	if [ "$${COMPILER_2}" != "" ];\
 	then echo "compiling using clang!! Please redirect";\
 	elif [ "$${COMPILER_1}" = "" ];\
@@ -15,4 +15,4 @@ check_compiler:
 	fi
 	@echo
 	@echo "compiler using :"
-	@echo "$$(g++ --version)"
+	@echo "$$(g++-8 --version)"
