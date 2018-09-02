@@ -127,7 +127,7 @@ ostream& operator << (ostream& os, const JsonElem& j)
 }
 bool operator >> (string& in,JsonElem& j){
   smatch sm;
-  if(regex_match(in,sm,regex("[ \t]*\"([A-Za-z]*)\"[ \t]*:[ \t]*(-[0-9]*|[0-9]*).*"))){
+  if(regex_match(in,sm,regex("[ \t]*\"([A-Za-z_0-9]*)\"[ \t]*:[ \t]*(-[0-9]*|[0-9]*).*"))){
     j._key = sm[1];
     ss tmp;
     tmp << sm[2].str();
